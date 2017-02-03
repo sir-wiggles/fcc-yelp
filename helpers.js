@@ -3,8 +3,6 @@ const crypto  = require("crypto");
 const request = require("request");
 const keys    = require("./keys").keys;
 
-console.log(keys);
-
 const oauth = OAuth({
     consumer: keys.consumer,
     signature_method : 'HMAC-SHA1',

@@ -34,6 +34,6 @@ app.get("/search/:id", function(req, res) {
     helpers.getRestaurants(req.params.id, cb);
 })
 
-app.listen(3001, function() {
-    console.log("Listening on port 3001");
+app.listen(process.env.PORT || 3001, function() {
+    console.log("Listening on port " + (process.env.PORT || 3001));
 });
