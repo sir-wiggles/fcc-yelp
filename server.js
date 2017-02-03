@@ -8,7 +8,7 @@ app.get("/", function(req, res) {
     res.sendFile("client/build/index.html");
 });
 
-app.get("/search", function(req, res) {
+app.get("/search/:id", function(req, res) {
 
     function cb(error, response) {
 
@@ -31,7 +31,7 @@ app.get("/search", function(req, res) {
         }
     }
 
-    helpers.getRestaurants("Mountain View", cb);
+    helpers.getRestaurants(req.params.id, cb);
 })
 
 app.listen(3001, function() {

@@ -17,7 +17,7 @@ export function fetch_restaurants(loc) {
 
     return function(dispatch) {
         dispatch(getting_restaurants(loc));
-        fetch("search?"+loc)
+        fetch("search/" +loc)
             .then(resp => {
             if (resp.status >= 200 && resp.status < 300) {
                 resp.json()

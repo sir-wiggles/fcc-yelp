@@ -1,10 +1,12 @@
 const OAuth   = require("oauth-1.0a");
 const crypto  = require("crypto");
 const request = require("request");
-const keys    = require("keys");
+const keys    = require("./keys").keys;
+
+console.log(keys);
 
 const oauth = OAuth({
-    keys.consumer,
+    consumer: keys.consumer,
     signature_method : 'HMAC-SHA1',
     hash_function    : function(base_string, key) {
         return crypto.createHmac('sha1', key).update(base_string).digest('base64');
